@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>innerHTML and input value</title>
+
+        <script>
+            //I can write the JS code before the closing of head tag
+        </script>
+
+    </head>
+    <body>
+        <div data-x="1">SALONI</div>
+        <p class="myparagraph"></p>
+
+        <hr>
+
+        <form>
+            <label for="fullname">FullName</label>
+            <input type="text" id="fullname">
+
+            <label for="gender">Gender</label>
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="button" value="submit" onclick="submitData()">
+        </form>
+
+        <button onclick="oklabs()">Click Me</button>
+        
+
+        <script>
+            //I can write the JS code before the closing of body tag
+
+            //object.method
+            var element1 = document.querySelector('div[data-x="1"]');
+            let element2 = document.querySelector('p.myparagraph');
+
+            //Global Variable
+            var full_name = document.querySelector('#fullname');
+
+            console.log(element1.innerHTML);
+            console.log(element2.innerHTML);
+            element2.innerHTML = 'Hello '+element1.innerHTML
+            //1. Function Defination
+            function oklabs(){
+                full_name.value = 'Hello '+element1.innerHTML;
+                console.log("Hello Hye Bye");
+            }
+
+            //1. Function Defination
+            let d1 = document.querySelector('input#fullname');
+            var d2 = document.querySelector('select#gender')
+            function submitData(){
+                console.log(d1.value);
+                console.log(d2.value);
+            }
+        </script>
+    </body>
+</html>
